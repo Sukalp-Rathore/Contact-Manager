@@ -5,6 +5,7 @@ import React , {useState,useEffect} from 'react';
 import Header from './components/Header'
 import AddContact from './components/AddContact'
 import ContactList from './components/ContactList'
+import ContactDetail from './components/ContactDetail';
 
 
 function App() {  
@@ -45,6 +46,7 @@ localStorage.setItem(LOCAL_STORAGE_KEY,JSON.stringify(contacts));
       <Routes>
       <Route path="/add"  element={<AddContact addContactHandler={addContactHandler} />} />
       <Route path="/" element={<ContactList contacts={contacts} getContactId={removeContactHandler}/>} />
+      <Route path='/contact/:id' element={<ContactDetail/>}/>
       </Routes>
       
       {/* <AddContact addContactHandler={addContactHandler}/>
